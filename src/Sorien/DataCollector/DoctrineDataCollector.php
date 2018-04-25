@@ -94,6 +94,16 @@ class DoctrineDataCollector extends DataCollector
         return 'db';
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function reset()
+    {
+        $this->data = [
+            'queries' => [],
+        ];
+    }
+
     private function sanitizeQueries($queries, $connectionName)
     {
         foreach ($queries as $i => $query) {
